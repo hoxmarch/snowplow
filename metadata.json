@@ -1,0 +1,6 @@
+{
+  "name": "Frosty Hollow - Cozy Snow Plow 3D",
+  "description": "A cute cartoonish relaxation 3D isometric snow-plowing game set in a cozy midwestern town. Clear snowy streets, earn coins, build combo streaks, and upgrade your snow plow!",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
