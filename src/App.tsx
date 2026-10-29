@@ -4,14 +4,14 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { GameCanvas } from './components/GameCanvas';
-import { TitleScreen } from './components/TitleScreen';
-import { HUD } from './components/HUD';
-import { GarageModal } from './components/GarageModal';
-import { PauseModal } from './components/PauseModal';
-import { VictoryModal } from './components/VictoryModal';
-import { GameEngine } from './game/gameEngine';
-import { soundManager } from './audio/soundManager';
+import { GameCanvas } from 'components/GameCanvas';
+import { TitleScreen } from 'components/TitleScreen';
+import { HUD } from 'components/HUD';
+import { GarageModal } from 'components/GarageModal';
+import { PauseModal } from 'components/PauseModal';
+import { VictoryModal } from 'components/VictoryModal';
+import { GameEngine } from 'game/gameEngine';
+import { soundManager } from 'audio/soundManager';
 import { GameState, PlayerStats, PlowUpgrades, CameraViewMode, TimeOfDay, TownQuest } from './types/game';
 
 export default function App() {
