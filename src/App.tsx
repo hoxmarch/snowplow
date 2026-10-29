@@ -4,14 +4,14 @@
  */
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { GameCanvas } from 'components/GameCanvas';
-import { TitleScreen } from 'components/TitleScreen';
-import { HUD } from 'components/HUD';
-import { GarageModal } from 'components/GarageModal';
-import { PauseModal } from 'components/PauseModal';
-import { VictoryModal } from 'components/VictoryModal';
-import { GameEngine } from 'game/gameEngine';
-import { soundManager } from 'audio/soundManager';
+import { GameCanvas } from './components/GameCanvas';
+import { TitleScreen } from './components/TitleScreen';
+import { HUD } from './components/HUD';
+import { GarageModal } from './components/GarageModal';
+import { PauseModal } from './components/PauseModal';
+import { VictoryModal } from './components/VictoryModal';
+import { GameEngine } from './game/gameEngine';
+import { soundManager } from './audio/soundManager';
 import { GameState, PlayerStats, PlowUpgrades, CameraViewMode, TimeOfDay, TownQuest } from './types/game';
 
 export default function App() {
@@ -56,7 +56,7 @@ export default function App() {
     engineRef.current = engine;
     engine.addCoins(50); // Start bonus
     // Find initial active quest
-    const firstActive = engine.quests.find((q) => q.active && !q.completed) || null;
+    const firstActive = engine.quests.find((q: TownQuest) => q.active && !q.completed) || null;
     setCurrentQuest(firstActive);
   }, []);
 
@@ -87,7 +87,7 @@ export default function App() {
     onQuestCompleted: (quest: TownQuest) => {
       triggerNotification(`Quest Completed! "${quest.title}" (+${quest.rewardCoins} Coins!)`);
       if (engineRef.current) {
-        const nextActive = engineRef.current.quests.find((q) => q.active && !q.completed) || null;
+        const nextActive = engineRef.current.quests.find((q: TownQuest) => q.active && !q.completed) || null;
         setCurrentQuest(nextActive);
       }
     },
