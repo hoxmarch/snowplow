@@ -3,8 +3,11 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
 
-export default defineConfig(() => {
+export default defineConfig(({ command }) => {
   return {
+    // Use '/snowplow/' base for GitHub Pages production builds (https://hoxmarch.github.io/snowplow/)
+    // and '/' for local dev / preview environments.
+    base: process.env.BASE_URL || (command === 'build' ? '/snowplow/' : '/'),
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
